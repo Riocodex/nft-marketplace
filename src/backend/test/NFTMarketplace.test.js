@@ -52,5 +52,8 @@ describe("NFTMarketplace", function () {
       expect(await nft.balanceOf(addr1.address)).to.equal(1);
       expect(await nft.tokenURI(1)).to.equal(URI);
     })
+    it("should track newly created item, transfer NFT from seller to marketplace and emit offered event",async function (){
+        
+    })
   })
 })
