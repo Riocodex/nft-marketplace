@@ -7,4 +7,12 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 contract Marketplace is ReentrancyGuard {
     //stateVariables
+    address payable public immutable feeAccount;//the account that receives fees
+    uint public immutable feePercent; //the fee percentage on files
+    uint public itemCount;
+
+    constructor(uint _feePercent){
+        feeAccount = payable(msg.sender);
+        feePercent = _feePercent;
+    }
 }
