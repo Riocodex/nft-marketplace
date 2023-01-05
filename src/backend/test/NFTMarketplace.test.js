@@ -52,6 +52,7 @@ describe("NFTMarketplace", function () {
       expect(await nft.balanceOf(addr1.address)).to.equal(1);
       expect(await nft.tokenURI(1)).to.equal(URI);
     })
+
     it("Should track newly created item, transfer NFT from seller to marketplace and emit Offered event", async function () {
         // addr1 offers their nft at a price of 1 ether
         await expect(marketplace.connect(addr1).makeItem(nft.address, 1 , toWei(price)))
@@ -74,6 +75,12 @@ describe("NFTMarketplace", function () {
         expect(item.tokenId).to.equal(1)
         expect(item.price).to.equal(toWei(price))
         expect(item.sold).to.equal(false)
+      });
+
+      it("Should fail if price is set to zero", async function () {
+        await expect(
+          marketplace.connect(addr1).makeItem(nft.address, 1, 0)
+        ).to.be.revertedWith("Price must be greater than zero");
       });
   })
 })

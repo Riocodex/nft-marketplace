@@ -26,7 +26,7 @@ contract Marketplace is ReentrancyGuard {
         uint tokenId,
         uint price,
         address indexed seller
-    )
+    );
 
     //itemId => item
     mapping(uint => Item) public items;
