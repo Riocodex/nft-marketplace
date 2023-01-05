@@ -81,6 +81,6 @@ describe("NFTMarketplace", function () {
         await expect(
           marketplace.connect(addr1).makeItem(nft.address, 1, 0)
         ).to.be.revertedWith("Price must be greater than zero");
-      });
+      }); 
   })
 })
