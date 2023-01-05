@@ -42,7 +42,15 @@ describe("NFTMarketplace", function () {
         expect(await marketplace.feeAccount()).to.equal(deployer.address);
         expect(await marketplace.feePercent()).to.equal(feePercent);
       });
-
-    
   });
+
+  describe("Minting NFTs", function() {
+    it("should track each minted NFT", async function(){
+              // addr1 mints an nft
+      await nft.connect(addr1).mint(URI)
+      expect(await nft.tokenCount()).to.equal(1);
+      expect(await nft.balanceOf(addr1.address)).to.equal(1);
+      expect(await nft.tokenURI(1)).to.equal(URI);
+    })
+  })
 })
