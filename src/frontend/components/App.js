@@ -4,9 +4,15 @@ import './App.css';
 
 import { useState } from 'react'
 import { ethers } from  "ethers"
+import MarketplaceAbi from '../contractsData/Marketplace.json'
+import MarketplaceAddress from '../contractsData/Marketplace-address.json'
+import NFTAbi from '../contractsData/NFT.json'
+import NFTAddress from '../contractsData/NFT-address.json'
  
 function App() {
   const [ account, setAccount ] = useState(null)
+  const [nft, setNFT] = useState({})
+  const [marketplace, setMarketplace] = useState({})
   //Metamask Login/Connect
   const web3Handler = async() =>{
     const accounts = await window.ethereum.request({method: "eth_requestAccounts"})
@@ -16,6 +22,13 @@ function App() {
     //set signer
     const signer = provider.getSigner()
     loadContracts(signer)
+  }
+  const loadContracts = async (signer) => {
+    //get deployed copies of contract
+    const marketplace = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
+    setMarketplace(marketplace)
+    const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)
+    setNFT(nft)
   }
 
   return (

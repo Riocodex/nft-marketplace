@@ -19,6 +19,7 @@ async function main() {
   
   // For each contract, pass the deployed contract and name to this function to save a copy of the contract ABI and address to the front end.
   saveFrontendFiles(nft, "NFT");
+  saveFrontendFiles(marketplace, "Marketplace")
 }
 
 function saveFrontendFiles(contract, name) {
