@@ -26,7 +26,6 @@ const client = ipfsClient.create({
     },
 });
 
-
 const Create = ({ marketplace, nft }) => {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(null)
