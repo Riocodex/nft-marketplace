@@ -1,8 +1,12 @@
 
 import logo from './logo.png';
 import './App.css';
+
+import { ethers } from  "ethers"
  
 function App() {
+  
+  //Metamask Login/Connect
   return (
     <div>
       <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
