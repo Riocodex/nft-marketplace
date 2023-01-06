@@ -2,11 +2,22 @@
 import logo from './logo.png';
 import './App.css';
 
+import { useState } from 'react'
 import { ethers } from  "ethers"
  
 function App() {
-  
+  const [ account, setAccount ] = useState(null)
   //Metamask Login/Connect
+  const web3Handler = async() =>{
+    const accounts = await window.ethereum.request({method: "eth_requestAccounts"})
+    setAccount(accounts[0])
+    //Get provider from Metamask
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    //set signer
+    const signer = provider.getSigner()
+    loadContracts(signer)
+  }
+
   return (
     <div>
       <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
