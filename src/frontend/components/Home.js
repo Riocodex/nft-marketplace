@@ -13,7 +13,11 @@ const Home = ({ marketplace, nft }) => {
       const item = await marketplace.items(i)
       if (!item.sold) {
         // get uri url from nft contract
-        const uri = await nft.tokenURI(item.tokenId)
+        let uri = await nft.tokenURI(item.tokenId)
+        uri =  uri.replace(
+          "ipfs://",
+          "https://infura.io/ipfs/"
+        );
         // use uri to fetch the nft metadata stored on ipfs 
         const response = await fetch(uri)
         const metadata = await response.json()
