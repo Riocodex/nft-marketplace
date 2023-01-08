@@ -38,7 +38,7 @@ const Create = ({ marketplace, nft }) => {
       try {
         const result = await client.add(file)
         console.log(result)
-        setImage(`//ipfs.infura.io/ipfs/${result.path}`)
+        setImage(`https://ipfs.infura.io/ipfs/${result.path}`)
       } catch (error){
         console.log("ipfs image upload error: ", error)
       }
@@ -54,7 +54,7 @@ const Create = ({ marketplace, nft }) => {
     }
   }
   const mintThenList = async (result) => {
-    const uri = `//ipfs.infura.io/ipfs/${result.path}`
+    const uri = `https://ipfs.infura.io/ipfs/${result.path}`
     // mint nft 
     await(await nft.mint(uri)).wait()
     // get tokenId of new nft 
