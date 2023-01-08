@@ -12,10 +12,10 @@ const ipfsClient = require('ipfs-http-client');
 const PROJECT_ID = env.PROJECT_ID
 const API_SECRET = env.API_KEY_SECRET
 
-const projectId = PROJECT_ID;   // <---------- your Infura Project ID
+const projectId = PROJECT_ID;   // <---------- my Infura Project ID
 
-const projectSecret = API_SECRET;  // <---------- your Infura Secret
-// (for security concerns, consider saving these values in .env files)
+const projectSecret = API_SECRET;  // <---------- my Infura Secret
+
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 
