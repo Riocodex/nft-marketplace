@@ -1,19 +1,20 @@
+import env from "react-dotenv";
+
 import { useState } from 'react'
 import { ethers } from "ethers"
 import { Row, Form, Button } from 'react-bootstrap'
 var Buffer = require('buffer/').Buffer
-require doten
 
 
 
 //ipfs authorization 
 const ipfsClient = require('ipfs-http-client');
-// const PROJECT_ID = process.env.PROJECT_ID
-// const API_SECRET = process.env.API_KEY_SECRET
+const PROJECT_ID = env.PROJECT_ID
+const API_SECRET = env.API_KEY_SECRET
 
-const projectId = "2JxLmbuIpIQxW2x2x7Q2UG5qaLv";   // <---------- your Infura Project ID
+const projectId = PROJECT_ID;   // <---------- your Infura Project ID
 
-const projectSecret = "e090f091cad8e0d10abdd17ee55a454e";  // <---------- your Infura Secret
+const projectSecret = API_SECRET;  // <---------- your Infura Secret
 // (for security concerns, consider saving these values in .env files)
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
