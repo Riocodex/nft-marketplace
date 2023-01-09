@@ -15,7 +15,7 @@ const MyPurchases = ({ marketplace, nft, account }) => {
       const purchases = await Promise.all(results.map(async i => {
         // fetch arguments from each result
         i = i.args
-        console.log("this is the args",i)
+       
         // get uri url from nft contract
         const uri = await nft.tokenURI(i.tokenId)
         // use uri to fetch the nft metadata stored on ipfs 
