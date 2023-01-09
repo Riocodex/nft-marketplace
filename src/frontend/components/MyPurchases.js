@@ -15,6 +15,7 @@ const MyPurchases = ({ marketplace, nft, account }) => {
       const purchases = await Promise.all(results.map(async i => {
         // fetch arguments from each result
         i = i.args
+        console.log("this is the args",i)
         // get uri url from nft contract
         const uri = await nft.tokenURI(i.tokenId)
         // use uri to fetch the nft metadata stored on ipfs 
@@ -46,9 +47,26 @@ const MyPurchases = ({ marketplace, nft, account }) => {
     )
   
   return (
-    <div>
-      
-    </div>
+    <div className="flex justify-center">
+    {purchases.length > 0 ?
+      <div className="px-5 container">
+        <Row xs={1} md={2} lg={4} className="g-4 py-5">
+          {purchases.map((item, idx) => (
+            <Col key={idx} className="overflow-hidden">
+              <Card>
+                <Card.Img variant="top" src={item.image} />
+                <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
+      : (
+        <main style={{ padding: "1rem 0" }}>
+          <h2>No purchases</h2>
+        </main>
+      )}
+  </div>
   )
 }
 
