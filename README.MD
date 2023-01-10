@@ -17,4 +17,7 @@ Then deploy the smart contract to the hardhat blockchain
 npx hardhat run src/backend/scripts/deploy.js --network localhost
 ```
 
-Next go to your browser [http://localhost:3000](http://localhost:3000) to s
+Next go to your browser [http://localhost:3000](http://localhost:3000) to open the user interface.
+
+Ensure you have [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) installed with ethereum
+
