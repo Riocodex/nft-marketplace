@@ -1,0 +1,1 @@
+This is a featuristic yet minimalistic nft marketplace built with [`react js`]('https://reactjs.org/') and [`hardhat`]('https://hardhat.org/')
