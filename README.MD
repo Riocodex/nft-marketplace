@@ -21,3 +21,11 @@ Next go to your browser [http://localhost:3000](http://localhost:3000) to open t
 
 Ensure you have [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) installed with ethereum
 
+With all these setup youre good to go
+
+## Using The Website
+- Connect wallet
+- Go to the create page and create an nft
+- Go to the home page and view your nft
+- Play around and use other accounts to buy and view them in the listed and purchases page
+- Leave a star
