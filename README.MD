@@ -29,3 +29,5 @@ With all these setup youre good to go
 - Go to the home page and view your nft
 - Play around and use other accounts to buy and view them in the listed and purchases page
 - Leave a star
+
+Check it out [here](https://nft-marketplace-three-eosin.vercel.app/)
