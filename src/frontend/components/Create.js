@@ -66,6 +66,7 @@ const Create = ({ marketplace, nft }) => {
     // add nft to marketplace
     const listingPrice = ethers.utils.parseEther(price.toString())
     await(await marketplace.makeItem(nft.address, id, listingPrice)).wait()
+    alert("NFT successfully Listed please go to home page")
   }
   return (
     <div className="container-fluid mt-5">
