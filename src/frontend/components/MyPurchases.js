@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ethers } from "ethers"
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col, Card,Button } from 'react-bootstrap'
 
 
 
@@ -56,6 +56,11 @@ const MyPurchases = ({ marketplace, nft, account }) => {
               <Card>
                 <Card.Img variant="top" src={item.image} />
                 <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
+                <div className="d-grid px-0">
+                <Button onClick={createNFT} variant="primary" size="lg">
+                  Create & List NFT!
+                </Button>
+              </div>
               </Card>
             </Col>
           ))}
