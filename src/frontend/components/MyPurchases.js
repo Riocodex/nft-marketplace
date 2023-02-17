@@ -37,6 +37,14 @@ const MyPurchases = ({ marketplace, nft, account }) => {
       setLoading(false)
       setPurchases(purchases)
     }
+
+    const list = async () =>{
+        // add nft to marketplace
+      const listingPrice = ethers.utils.parseEther(price.toString())
+      await(await marketplace.makeItem(nft.address, id, listingPrice)).wait()
+      alert("NFT successfully Listed please go to home page")
+    }
+
     useEffect(() => {
       loadPurchasedItems()
     }, [])
@@ -57,7 +65,7 @@ const MyPurchases = ({ marketplace, nft, account }) => {
                 <Card.Img variant="top" src={item.image} />
                 <Card.Footer>{ethers.utils.formatEther(item.totalPrice)} ETH</Card.Footer>
                 <div className="d-grid px-0">
-                <Button onClick={createNFT} variant="primary" size="lg">
+                <Button onClick={list} variant="primary" size="lg">
                   Create & List NFT!
                 </Button>
               </div>
